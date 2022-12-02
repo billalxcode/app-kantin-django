@@ -1,0 +1,22 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card mt-3 mx-auto" style="width: 30rem">
+        <img src="{{ makanan.gambar.url }}" class="card-img-top" alt="Makanan">
+        <div class="card-body">
+            <h5 class="card-title fw-bold text-center">{{ makanan.nama }}</h5>
+            <p>Harga: Rp. {{ makanan.harga }}</p>
+            <p>Stok: Rp. {{ makanan.stok }}</p>
+            <p>Kantin: {{ makanan.kantin }}</p>
+            <p>Status: 
+                {% if makanan.tersedia %}
+                    <span class="badge bg-success">Tersedia</span>
+                {% else %}
+                    <span class="badge bg-danger">Tidak Tersedia</span>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

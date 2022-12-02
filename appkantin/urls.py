@@ -23,7 +23,9 @@ from kantin import views as kantinViews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', kantinViews.home, name="home"),
-    path('makanan/<int:makanan_id>', kantinViews.makanan, name='makanan')
+    path('makanan/<int:makanan_id>', kantinViews.makanan, name='detail'),
+    path('kantin/<int:kantin_id>', kantinViews.kantin, name='kantin'),
+    path('about/', kantinViews.about, name="about")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
